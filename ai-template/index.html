@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="toolbar">
+      <button id="add">Add node</button>
+      <label>Grid: <input id="grid" type="number" value="40" min="5" step="5" style="width: 6ch" /></label>
+      <label
+        >Edges:
+        <select id="edgeStyle">
+          <option value="curved" selected>Curved</option>
+          <option value="straight">Straight</option>
+        </select>
+      </label>
+      <span class="hint">Drag blocks (snap). Shift+click to connect. Double-click node to change its out port.</span>
+    </div>
+
+    <svg id="canvas" viewBox="0 0 2000 1200" tabindex="0" aria-label="diagram canvas"></svg>
+    <script src="script.js"></script>
+  </body>
+</html>

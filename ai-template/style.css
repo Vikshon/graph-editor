@@ -1,0 +1,87 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: system-ui, sans-serif;
+}
+
+.toolbar {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding: 8px 12px;
+    border-bottom: 1px solid #e0e0e0;
+    background: #fafafa;
+}
+
+#canvas {
+    flex: 1 1 auto;
+    width: 100%;
+    height: calc(100vh - 50px);
+    cursor: default;
+}
+
+#canvas:focus {
+    outline: none;
+}
+
+.node rect {
+    fill: #fff;
+    stroke: #333;
+    stroke-width: 1.5;
+    rx: 8;
+    ry: 8;
+    filter: drop-shadow(0 1px 0.5px rgba(0, 0, 0, .15));
+}
+
+.node text {
+    font-size: 14px;
+    user-select: none;
+    pointer-events: none;
+}
+
+.node {
+    cursor: move;
+}
+
+.node.selected rect {
+    stroke: #1976d2;
+    stroke-width: 2;
+}
+
+.edge {
+    stroke: #444;
+    stroke-width: 2;
+    fill: none;
+}
+
+.hint {
+    color: #666;
+    font-size: 12px;
+    margin-left: auto;
+}
+
+.port {
+    fill: #1976d2;
+    stroke: white;
+    stroke-width: 1.5;
+    pointer-events: none;
+    /* do not steal events from node */
+}
+
+* {
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+input,
+select,
+button {
+    -webkit-user-select: text;
+    user-select: text;
+}
